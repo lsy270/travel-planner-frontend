@@ -1,48 +1,54 @@
-# travel-planner-frontend
+# 🌍 AI 智能旅游规划系统
 
-This template should help get you started developing with Vue 3 in Vite.
+基于 Spring Boot + Vue3 + LLM 的全栈 AI 旅游规划平台。用户输入目的地、天数、预算和偏好，AI 自动生成详细的个性化旅行计划。
 
-## Recommended IDE Setup
+## 🔗 在线访问
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+前端：https://travel-planner-frontend-five.vercel.app
 
-## Recommended Browser Setup
+## ✨ 功能特性
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- 🤖 AI 智能生成旅行计划（接入 NVIDIA Build DeepSeek-V4-Pro）
+- 📝 支持目的地、天数、预算、偏好自定义
+- 💾 行程历史保存与查询
+- 📱 响应式前端界面，Markdown 渲染 AI 输出
+- 🔍 按目的地搜索历史行程
 
-## Type Support for `.vue` Imports in TS
+## 🛠 技术栈
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+### 后端
+- Spring Boot 3.5 + Java 21
+- Spring Data JPA + H2 内存数据库
+- NVIDIA Build API（DeepSeek-V4-Pro）
 
-## Customize configuration
+### 前端
+- Vue 3 + TypeScript + Vite
+- Axios + Marked.js
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+## 🚀 本地运行
 
-## Project Setup
-
-```sh
-npm install
+### 后端
+```bash
+cd personal-project-lsy270
+mvn spring-boot:run
 ```
 
-### Compile and Hot-Reload for Development
-
-```sh
+### 前端
+```bash
+npm install
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+## 📡 接口列表
 
-```sh
-npm run build
-```
+| 方法 | 路径 | 说明 |
+|------|------|------|
+| POST | /api/travel/plans | 创建行程 |
+| GET | /api/travel/plans | 获取所有行程 |
+| GET | /api/travel/plans/{id} | 获取单个行程 |
+| GET | /api/travel/plans/search | 搜索行程 |
+| DELETE | /api/travel/plans/{id} | 删除行程 |
 
-### Lint with [ESLint](https://eslint.org/)
+## 🤖 AI 辅助开发说明
 
-```sh
-npm run lint
-```
+本项目使用 Claude AI 辅助开发，比例约 70%。
